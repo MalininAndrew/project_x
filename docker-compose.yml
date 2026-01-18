@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - '80:80'
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - project_x
+
+  backend:
+    build:
+      context: ./ttracker
+      dockerfile: Dockerfile
+    container_name: ttracker_backend
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgresql://andrew_malinin:s5ixGvXeyi@postgres:5432/project_x_db
+    depends_on:
+      - postgres
+    networks:
+      - project_x
+
+  frontend:
+    build:
+      context: "./ttracker front"
+      dockerfile: Dockerfile
+    container_name: ttracker_frontend
+    restart: always
+    ports:
+      - '80:80'
+    networks:
+      - project_x
+
+volumes:
+  pgdata:
+
+networks:
+  project_x:
+    driver: bridge
