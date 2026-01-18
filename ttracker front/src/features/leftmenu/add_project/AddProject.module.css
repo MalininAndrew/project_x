@@ -1,0 +1,18 @@
+.add_project {
+	margin-left: 28px;
+}
+
+.input_add_project {
+	width: 170px;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #9A9A9A;
+	background-color: #F8F8F8;
+	color: #525252;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+.input_add_project:focus {
+	outline: none;
+}

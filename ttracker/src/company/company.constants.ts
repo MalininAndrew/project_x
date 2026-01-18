@@ -1,0 +1,1 @@
+const NOT_FOUND_COMPANY_ERROR = 'Компания не найдена';

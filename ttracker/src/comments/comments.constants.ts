@@ -1,0 +1,1 @@
+export const COMMENT_NOT_FOUND_ERROR = 'Комментарий не найден';

@@ -1,0 +1,10 @@
+.user_icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon:hover {
+	background-color: var(--subtask-background);
+	border-radius: 50%;
+}

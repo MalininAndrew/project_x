@@ -1,0 +1,19 @@
+.filters {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 0px 15px;
+	height: 40px;
+}
+
+.filters_menu {
+	background-color: var(--grey-background);
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 1px solid var(--separator-line);
+}
+
+.pr_settings {
+	cursor: pointer;
+}

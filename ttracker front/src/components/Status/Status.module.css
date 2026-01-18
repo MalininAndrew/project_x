@@ -1,0 +1,17 @@
+.status {
+	cursor: pointer;
+	border-radius: 30px;
+	border: 1px solid var(--separator-line);
+	padding: 5px 10px
+}
+
+.status:hover {
+	border: 1px solid var(--primary2);
+}
+
+.active_status {
+	cursor: default;
+	border-radius: 30px;
+	padding: 5px 10px;
+	background-color: var(--separator-line);
+}

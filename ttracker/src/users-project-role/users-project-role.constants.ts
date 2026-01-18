@@ -1,0 +1,1 @@
+export const USER_ALREADY_ADDED_TO_PROJECT = 'Пользователь уже добавлен в проект';

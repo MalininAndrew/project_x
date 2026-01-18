@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.discription {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.name {
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text);
+}
+
+.discription img {
+	cursor: pointer;
+}
+

@@ -1,0 +1,216 @@
+.task_window {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 600px;
+	padding: 20px;
+	background-color: var(--grey-background);
+	border-left: 3px solid var(--separator-line);
+	transform: translateX(100%);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	overflow-y: auto;
+	z-index: 9;
+}
+
+.open {
+	transform: translateX(0);
+}
+
+.task_name {
+	cursor: text;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text);
+}
+
+.input {
+	width: 410px;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #9A9A9A;
+	background-color: #F8F8F8;
+	color: #525252;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+.input:focus {
+	outline: none;
+}
+
+.task_name_done {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text);
+	text-decoration: line-through;
+}
+
+.name_and_btns {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: relative;
+}
+
+.btns {
+	display: flex;
+	justify-content: space-between;
+	width: 120px;
+}
+
+.menu_icon {
+	width: 24px;
+	height: 24px;
+}
+
+.menu_icon:hover {
+	cursor: pointer;
+	background-color: var(--subtask-background);
+	border-radius: 3px;
+}
+
+.statuses {
+	display: flex;
+	padding: 15px 0px;
+	gap: 10px;
+}
+
+.task_description_container {
+	padding-bottom: 10px;
+}
+
+.task_description {
+	padding: 15px 0px;
+}
+
+.ready_desc {
+	cursor: pointer;
+	color: var(--text);
+	border: 1px solid var(--separator-line);
+	border-radius: 10px;
+	padding: 10px;
+	width: 100%;
+	min-height: 100px;
+	white-space: pre-wrap;
+}
+
+.text_area_cont {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+}
+
+.text_area {
+	font-family: 'Inter', sans-serif;
+	font-size: 14px;
+	color: var(--text);
+	border: 1px solid var(--separator-line);
+	border-radius: 10px;
+	padding: 10px;
+	width: 100%;
+	height: 100px;
+	resize: none;
+}
+
+.text_area:focus {
+	outline: none;
+}
+
+.save_btn {
+	align-self: flex-end;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	background-color: var(--primary2);
+	color: white;
+}
+
+.save_btn:hover {
+	background-color: var(--primary);
+}
+
+.add_and_progress {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add_subtask {
+	display: flex;
+	align-items: center;
+	padding: 5px 5px;
+	width: 190px;
+}
+
+.add_subtask:hover {
+	cursor: pointer;
+	background-color: var(--subtask-background);
+	border-radius: 5px;
+}
+
+.progress {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.progress_bar {
+	height: 24px;
+	width: 250px;
+	accent-color: var(--primary2)
+}
+
+.subtasks {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 10px 0px;
+}
+
+.tasks_param {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 20px 0px 30px 0px;
+}
+
+.comments {
+	padding-top: 15px;
+}
+
+.no_comments {
+	padding-bottom: 15px;
+}
+
+.input_comments {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background-color: white;
+	border: 1px solid var(--separator-line);
+	border-radius: 30px;
+	padding: 2px 10px;
+}
+
+.input_comments input {
+	width: 450px;
+	height: 24px;
+	border: none;
+	font-size: 14px;
+	color: var(--text);
+}
+
+.input_actions {
+	display: flex;
+	align-items: center;
+}
+
+.input_comments input:focus {
+	outline: none;
+}

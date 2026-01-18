@@ -1,0 +1,44 @@
+.subtask_list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.add_subtask {
+	display: flex;
+	align-items: center;
+	padding: 5px 5px;
+}
+
+.add_subtask:hover {
+	cursor: pointer;
+	background-color: var(--grey-background);
+	border-radius: 5px;
+}
+
+.subtask_space {
+	background-color: var(--subtask-background);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top: 1px solid var(--separator-line);
+	padding: 5px 10px 5px 10px;
+}
+
+.progress {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.progress img {
+	cursor: pointer;
+}
+
+.progress_bar {
+	height: 20px;
+	width: 180px;
+	accent-color: var(--primary2)
+}
+

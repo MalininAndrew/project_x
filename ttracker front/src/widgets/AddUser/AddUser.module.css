@@ -1,0 +1,61 @@
+.add_user {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: var(--grey-background);
+}
+
+.close {
+	width: 24px;
+	height: 24px;
+	align-self: flex-end;
+}
+
+.close:hover {
+	cursor: pointer;
+	background-color: var(--subtask-background);
+	border-radius: 5px;
+}
+
+.inputs {
+	display: flex;
+	justify-content: space-between;
+}
+
+.input_box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.label {
+	color: var(--text);
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.input {
+	width: 170px;
+	border: 1px solid var(--separator-line);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.btn {
+	align-self: flex-end;
+	color: white;
+	padding: 10px 15px;
+	background-color: var(--primary);
+	border: none;
+	border-radius: 10px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.error_place {
+	color: var(--primary);
+}

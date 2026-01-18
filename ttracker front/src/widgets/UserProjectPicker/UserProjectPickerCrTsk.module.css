@@ -1,0 +1,43 @@
+.team {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	position: absolute;
+	top: 25px;
+	left: 0px;
+	padding: 10px;
+	min-width: 200px;
+	border-radius: 10px;
+	background-color: var(--grey-background);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	z-index: 10;
+}
+
+.user {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	gap: 10px;
+}
+
+.user:hover {
+	cursor: pointer;
+	background-color: var(--subtask-background);
+	border-radius: 5px;
+}
+
+.remove_user {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	gap: 10px;
+}
+
+.remove_user span {
+	font-size: 12px;
+}
+
+.remove_user span:hover {
+	color: var(--primary);
+}

@@ -1,0 +1,77 @@
+.desk {
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	background-color: var(--grey-background);
+	padding: 5px 10px 10px 10px;
+	border-radius: 10px;
+	height: calc(100vh - 150px);/* чтобы влезало на экран с отступом от шапки */
+	overflow: hidden;
+}
+
+.desk_is_dragging {
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	background-color: var(--subtask-background);
+	padding: 5px 10px 10px 10px;
+	border-radius: 10px;
+	height: calc(100vh - 150px);
+	/* чтобы влезало на экран с отступом от шапки */
+	overflow: hidden;
+}
+
+.desk_bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--grey-background);
+	min-height: 30px;
+}
+
+.desk_bar:hover {
+	cursor: pointer;
+}
+
+.name {
+	color: var(--text);
+	font-weight: 400;
+}
+
+.icons {
+	display: none;
+}
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	width: 20px;
+}
+
+.icon:hover {
+	height: 20px;
+	width: 20px;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+}
+
+.desk:hover .icons {
+	display: flex;
+	align-items: center;
+	gap: 3px
+}
+
+.space_for_tasks {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 10px;
+	overflow-y: auto;
+	flex-grow: 1;
+	scrollbar-width: none;
+}
+
+
+

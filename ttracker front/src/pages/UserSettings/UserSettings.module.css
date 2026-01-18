@@ -1,0 +1,80 @@
+.settings {
+	padding: 10px 20px;
+	width: 600px;
+}
+
+.headling {
+	color: var(--text);
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.headling2 {
+	color: var(--text);
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.company_info {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.input {
+	width: 200px;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #9A9A9A;
+	color: #525252;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+.input:focus {
+	outline: none;
+}
+
+
+.company_info img{
+	cursor: pointer;
+}
+
+.add_employee {
+	color: white;
+	padding: 10px 15px;
+	background-color: var(--primary);
+	border: none;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.add_employee:hover {
+	background-color: var(--primary2);
+}
+
+.table {
+	padding-top: 20px;
+}
+
+.users_table {
+	padding-bottom: 10px;
+	background-color: var(--grey-background);
+	border-radius: 10px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+
+.users_table td {
+	padding: 5px 20px;
+	text-align: left;
+}
+
+.users_table th {
+	padding: 10px 20px;
+	text-align: left;
+	color: var(--text);
+	font-size: 12px;
+	font-weight: 300;
+}

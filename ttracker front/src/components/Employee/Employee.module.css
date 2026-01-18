@@ -1,0 +1,7 @@
+tr:hover {
+	background-color: var(--subtask-background);
+}
+
+.delete {
+	cursor: pointer;
+}

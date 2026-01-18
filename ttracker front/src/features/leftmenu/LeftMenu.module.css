@@ -1,0 +1,44 @@
+.left_menu {
+	width: 225px;
+	height: calc(100vh - 50px);
+	background-color: #F8F8F8;
+	border-right: 1px solid #D6D6D6;
+}
+
+.project_panel {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 20px 0px 20px;
+	color: #9A9A9A
+}
+
+.project_panel_name {
+	display: flex;
+	font-size: 14px;
+	font-weight: 100;
+	align-items: center;
+}
+
+.arrow_down {
+	cursor: pointer;
+	margin-top: 5px; 
+}
+
+.active {
+	transform: rotate(-90deg);
+}
+.plus {
+	margin-top: 5px;
+	width: 24px;
+	height: 24px;
+}
+
+.plus:hover {
+	cursor: pointer;
+	background-color: #e6e6e6;
+	border-radius: 5px;
+}
+
+.project_panel_name:hover {
+	cursor: pointer;
+}

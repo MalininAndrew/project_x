@@ -1,0 +1,147 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  password     String
+  createDate   DateTime  @map("create_date") @default(now())
+  updateDate   DateTime  @map("update_date") @updatedAt
+
+  roleId       Int       @map("fk_role_id")
+  companyId    Int?      @map("fk_company_id")
+
+  role         Role      @relation(fields: [roleId], references: [id])
+  company      Company?  @relation(fields: [companyId], references: [id])
+
+  ownedCompanies Company[]           @relation("UserOwnedCompanies")
+  ownedProjects  Project[]           @relation("UserOwnedProjects")
+  createdTasks   Task[]              @relation("TaskCreator")
+  executedTasks  Task[]              @relation("TaskExecutor")
+  comments       Comment[]
+  projectRoles   ProjectUserRole[]   @relation("UserProjectRoles")
+}
+
+model Company {
+  id         Int      @id @default(autoincrement())
+  name       String
+  createDate DateTime @map("create_date") @default(now())
+  updateDate DateTime @map("update_date") @updatedAt
+
+  ownerId    Int      @map("fk_user_owner")
+  owner      User     @relation("UserOwnedCompanies", fields: [ownerId], references: [id])
+
+  projects   Project[]
+  users     User[]
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  ownerId     Int      @map("user_owner_id")
+  companyId   Int      @map("fk_company_id")
+  createDate  DateTime @map("create_date") @default(now())
+
+  owner       User     @relation("UserOwnedProjects", fields: [ownerId], references: [id])
+  company     Company  @relation(fields: [companyId], references: [id])
+
+  statuses    Status[]
+  priorities  Priority[]
+  tasks       Task[]
+  projectRoles ProjectUserRole[] @relation("ProjectRoles")
+}
+
+model Role {
+  id          Int               @id @default(autoincrement())
+  name        String
+
+  users       User[]
+  projectRoles ProjectUserRole[] @relation("RoleInProjects")
+}
+
+model Status {
+  id         Int      @id @default(autoincrement())
+  name       String
+  projectId  Int      @map("fk_project_id")
+  sortIndex  Int?     
+  project    Project  @relation(fields: [projectId], references: [id])
+
+  tasks      Task[]
+}
+
+model Priority {
+  id         Int      @id @default(autoincrement())
+  name       String
+  projectId  Int      @map("fk_project_id")
+  project    Project  @relation(fields: [projectId], references: [id])
+
+  tasks      Task[]
+}
+
+model Task {
+  id            Int   @id @default(autoincrement())
+  creatorId     Int
+  executorId    Int?
+  projectId     Int       @map("fk_project_id")
+  taskName      String    @map("task_name")
+  description   String?
+  createDate    DateTime  @map("create_date") @default(now())
+  updateDate    DateTime  @map("update_date") @updatedAt
+  deadline      DateTime?
+  statusId      Int       @map("fk_status_id")
+  priorityId    Int       @map("fk_priority_id")
+  completedAt   DateTime?  @map("completed_at")
+  timeSpent     DateTime?  @map("time_spent")
+  parentTaskId  Int?       @map("fk_parent_task_id")
+  isSubtask     Boolean   @map("is_subtask")
+  isDone        Boolean   @map("is_done") @default(false)
+
+  creator       User      @relation("TaskCreator", fields: [creatorId], references: [id])
+  executor      User?      @relation("TaskExecutor", fields: [executorId], references: [id])
+  project       Project   @relation(fields: [projectId], references: [id])
+  status        Status    @relation(fields: [statusId], references: [id])
+  priority      Priority  @relation(fields: [priorityId], references: [id])
+  parentTask    Task?     @relation("TaskHierarchy", fields: [parentTaskId], references: [id])
+  subtasks      Task[]    @relation("TaskHierarchy")
+
+  comments      Comment[]
+}
+
+model Comment {
+  id         Int      @id @default(autoincrement())
+  description String
+  taskId     Int      @map("fk_task_id")
+  userId     Int      @map("fk_user_id")
+  createDate DateTime @map("create_date") @default(now())
+
+  task       Task     @relation(fields: [taskId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+}
+
+model ProjectUserRole {
+  id         Int      @id @default(autoincrement())
+
+  userId     Int      @map("fk_user_id")
+  projectId  Int      @map("fk_project_id")
+  roleId     Int      @map("fk_role_id")
+
+  user       User     @relation("UserProjectRoles", fields: [userId], references: [id])
+  project    Project  @relation("ProjectRoles", fields: [projectId], references: [id])
+  role       Role     @relation("RoleInProjects", fields: [roleId], references: [id])
+
+  @@unique([userId, projectId])
+}

@@ -1,0 +1,27 @@
+.layout {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	background-color: #053633;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid #D6D6D6;
+	flex: 1;
+}
+
+.logo img {
+	height: 400px;
+	width: 400px;
+}
+
+.content {
+	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 200px;
+}

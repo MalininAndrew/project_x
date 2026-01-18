@@ -1,0 +1,24 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	position: absolute;
+	top: 24px;
+	left: 264px;
+	z-index: 10;
+	background-color: #F8F8F8;
+	box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.action {
+	cursor: pointer;
+	color: #525252;
+	font-size: 14px;
+	font-weight: 100;
+}
+
+.action:hover {
+	color: #eb1835;
+}

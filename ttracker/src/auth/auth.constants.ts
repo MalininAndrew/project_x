@@ -1,0 +1,1 @@
+export const WRONG_PASSWORD_ERROR = 'Не правильный логин или пароль'

@@ -1,0 +1,14 @@
+.user_icon {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary);
+	min-width: 24px;
+	min-height: 24px;
+	border-radius: 50%;
+}
+
+.user_name {
+	color: white
+}

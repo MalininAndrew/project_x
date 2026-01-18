@@ -1,0 +1,65 @@
+.topmenu {
+	display: flex;
+	height: 50px;
+	width: 100%;
+	justify-content: space-between;
+	background-color: #053633;
+	align-items: center;
+	color: white;
+	padding: 0px 10px 0px 10px;
+}
+
+.search {
+	width: 500px;
+	height: 26px;
+	border-radius: 10px;
+	border: none;
+	padding-left: 10px;
+}
+
+.user_foto {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 35px;
+	width: 35px;
+	color: var(--text);
+	background-color: rgb(215, 215, 215);
+	border-radius: 50px;
+}
+
+.user_foto:hover {
+	color: #053633;
+}
+
+.user_settings {
+	position: relative;
+	display: flex;
+	gap: 10px;
+	text-decoration: none;
+}
+
+.dropdown_menu {
+	position: fixed;
+	right: 10px;
+	top: 55px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid var(--separator-line);
+	background-color: var(--grey-background);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu_item {
+	color: var(--text);
+	text-decoration: none;
+}
+
+.menu_item:hover {
+	cursor: pointer;
+	color: var(--primary);
+}

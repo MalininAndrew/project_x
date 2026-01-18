@@ -1,0 +1,12 @@
+.task_prop {
+	display: flex;
+	align-items: center;
+	gap: 20px
+}
+
+.title {
+	width: 120px;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--text);
+}
