@@ -54,7 +54,9 @@ services:
 
 volumes:
   pgdata:
-
+    external: true
+    name: postgresql_pgdata
+    
 networks:
   project_x:
     driver: bridge
