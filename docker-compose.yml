@@ -21,8 +21,6 @@ services:
       - '3000:3000'
     environment:
       DATABASE_URL: postgresql://andrew_malinin:s5ixGvXeyi@postgres:5432/project_x_db
-    depends_on:
-      - postgres
     networks:
       - project_x
 
@@ -36,26 +34,6 @@ services:
       - '80:80'
     networks:
       - project_x
-  
-  postgres:
-    image: postgres:15
-    container_name: postgres_db
-    restart: always
-    environment:
-      POSTGRES_USER: andrew_malinin
-      POSTGRES_PASSWORD: s5ixGvXeyi
-      POSTGRES_DB: project_x_db
-    ports:
-      - '5432:5432'
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    networks:
-      - project_x
-
-volumes:
-  pgdata:
-    external: true
-    name: postgresql_pgdata
     
 networks:
   project_x:
