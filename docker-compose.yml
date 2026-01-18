@@ -2,14 +2,14 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - '8080:80'
+      - '80:80'
     volumes:
       - './nginx.conf:/etc/nginx/nginx.conf'
     depends_on:
       - backend
       - frontend
     networks:
-      - project_x
+      - postgresql_project_x
 
   backend:
     build:
@@ -24,7 +24,7 @@ services:
     environment:
       DATABASE_URL: postgresql://andrew_malinin:s5ixGvXeyi@postgres:5432/project_x_db
     networks:
-      - project_x
+      - postgresql_project_x
 
   frontend:
     build:
@@ -33,10 +33,10 @@ services:
     container_name: ttracker_frontend
     restart: always
     ports:
-      - '80:80'
+      - '8081:80'
     networks:
-      - project_x
+      - postgresql_project_x
     
 networks:
-  project_x:
-    driver: bridge
+  postgresql_project_x:
+    external: true
