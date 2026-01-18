@@ -14,32 +14,6 @@ services:
     networks:
       - project_x
 
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: ttracker_backend
-    restart: always
-    ports:
-      - '3000:3000'
-    environment:
-      DATABASE_URL: postgresql://andrew_malinin:s5ixGvXeyi@postgres:5432/project_x_db
-    depends_on:
-      - postgres
-    networks:
-      - project_x
-
-  frontend:
-    build:
-      context: ../frontend # Укажите правильный путь к папке фронтенда
-      dockerfile: Dockerfile
-    container_name: ttracker_frontend
-    restart: always
-    ports:
-      - '80:80'
-    networks:
-      - project_x
-
 volumes:
   pgdata:
 

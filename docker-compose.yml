@@ -21,8 +21,6 @@ services:
       - ./ttracker/.env
     ports:
       - '3000:3000'
-    environment:
-      DATABASE_URL: postgresql://andrew_malinin:s5ixGvXeyi@postgres:5432/project_x_db
     networks:
       - postgresql_project_x
 
