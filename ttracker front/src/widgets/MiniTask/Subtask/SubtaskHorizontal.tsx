@@ -120,7 +120,7 @@ export default function SubtaskHorizontal({ task }: SubTaskProps) {
 			
 			<div className={styles.f_and_e_space}>
 				<DatePicker date={task.deadline} taskId={task.id}/>
-				<StatusComponent status={status} activeStatus={task.statusId}/>
+				<StatusComponent status={status} activeStatus={task.statusId} taskId={task.id}/>
 				<div className={styles.executor}>
 					{task.executorId ? <UserIcon 
 											elementId={`user-btn-${task.id}`} 
