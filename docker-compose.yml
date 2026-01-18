@@ -17,6 +17,8 @@ services:
       dockerfile: Dockerfile
     container_name: ttracker_backend
     restart: always
+    env_file:
+      - ./ttracker/.env
     ports:
       - '3001:3000'
     environment:
